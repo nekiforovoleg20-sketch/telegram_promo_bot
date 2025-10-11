@@ -93,7 +93,7 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
     
     # Создаем кнопку для открытия мини-аппы
     keyboard = [
-        [InlineKeyboardButton("🎁 Получить промокоды", web_app=WebAppInfo(url="https://venerable-cuchufli-bec50d.netlify.app"))]
+        [InlineKeyboardButton("🎁 Получить промокоды", web_app=WebAppInfo(url="https://amazing-druid-78b178.netlify.app/"))]
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     
