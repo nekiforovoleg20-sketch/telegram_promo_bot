@@ -1,0 +1,22 @@
+Три отдельных теминала Power Shell
+1.Для веб сервера cd webapp
+                  python app.py
+
+2.Для основного бота  cd bot
+                      python main_bot.py
+
+3. ССылка URL  бота https://venerable-cuchufli-bec50d.netlify.app/
+
+
+Запуск после перезагрузки:
+
+После перезагрузки компьютера тебе нужно будет:
+a. Открыть VSCode и папку проекта.
+b. Открыть терминал в VSCode.
+c. Активировать виртуальное окружение: venv\Scripts\activate (если не активировано).
+d. Перейти в папку bot и запустить бота: cd bot и python main_bot.py.
+
+
+git add .
+git commit -m "Обновление интерфейса"
+git push
