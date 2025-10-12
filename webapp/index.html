@@ -230,8 +230,8 @@
     margin-top: 8px;
     font-family: 'Comfortaa', cursive;
     font-weight: 700;
-    font-size: 18px;
-    min-width: 130px;         /* гарантирует, что кнопка не будет сжиматься */
+    font-size: 40px;
+    min-width: 200px;         /* гарантирует, что кнопка не будет сжиматься */
     align-self: center;       /* центрирует внутри сетки */
     justify-self: center;     /* выравнивает по центру */
 }
@@ -516,6 +516,27 @@
             opacity: 0;
             z-index: 0;
         }
+
+        /* Цвета для кнопок категорий */
+         .category-btn[onclick="openCategory('food')"] {
+             background: linear-gradient(135deg, #7e5335, #FFB7B2);
+         }
+
+         .category-btn[onclick="openCategory('auto')"] {
+             background: linear-gradient(135deg, #e98585, #6f3131);
+         }
+
+         .category-btn[onclick="openCategory('travel')"] {
+             background: linear-gradient(135deg, #2b8d86, #67E6DC);
+         }
+
+         .category-btn[onclick="openCategory('contests')"] {
+             background: linear-gradient(135deg, #e9cc54, #bfae74);
+         }
+
+         .category-btn[onclick="openCategory('other')"] {
+             background: linear-gradient(135deg, #85d2b6, #53997f);
+         }
         
         @keyframes sparkle {
             0% {
@@ -579,6 +600,18 @@
                     <span class="category-name">Еда</span>
                 </button>
                 
+                 <button class="category-btn" onclick="openCategory('auto')">
+                    <span class="category-name">Авто</span>
+                </button>
+
+                <button class="category-btn" onclick="openCategory('travel')">
+                    <span class="category-name">Отдых</span>
+                </button>
+
+                <button class="category-btn" onclick="openCategory('contests')">
+                    <span class="category-name">Розыгрыши</span>
+                 </button>
+
                 <button class="category-btn" onclick="openCategory('other')">
                     <span class="category-name">Всякое</span>
                 </button>
@@ -644,7 +677,23 @@
             // Всякое
             { id: 12, store: "Лента", code: "LENTA100", description: "100₽ скидка от 1000₽", expires_at: "2025-08-31", channel: "promo_channel_3", category: "other" },
             { id: 13, store: "СберМегаМаркет", code: "SBER100", description: "100₽ скидка от 500₽", expires_at: "2025-10-20", channel: "promo_channel_3", category: "other" },
-            { id: 14, store: "Магнит", code: "MAGNIT50", description: "50₽ скидка на продукты", expires_at: "2025-09-15", channel: "promo_channel_3", category: "other" }
+            { id: 14, store: "Магнит", code: "MAGNIT50", description: "50₽ скидка на продукты", expires_at: "2025-09-15", channel: "promo_channel_3", category: "other" },
+
+             // Авто
+            { id: 15, store: "AutoRu", code: "AUTO500", description: "500₽ на запчасти", expires_at: "2025-12-31", channel: "promo_channel_4", category: "auto" },
+            { id: 16, store: "Шины-Диски", code: "SHINA10", description: "10% на шины и диски", expires_at: "2025-11-30", channel: "promo_channel_4", category: "auto" },
+            { id: 17, store: "Масла-Смазки", code: "OIL2024", description: "15% на моторные масла", expires_at: "2025-10-31", channel: "promo_channel_4", category: "auto" },
+    
+             // Отдых
+            { id: 18, store: "Booking.com", code: "BOOKING15", description: "15% на отели", expires_at: "2025-12-31", channel: "promo_channel_5", category: "travel" },
+            { id: 19, store: "Aviasales", code: "AVIA500", description: "500₽ на авиабилеты", expires_at: "2025-11-30", channel: "promo_channel_5", category: "travel" },
+            { id: 20, store: "Ostrovok", code: "OSTROVOK", description: "10% на бронирование", expires_at: "2025-10-31", channel: "promo_channel_5", category: "travel" },
+    
+             // Розыгрыши
+            { id: 21, store: "Розыгрыш iPhone", code: "IPHONE15", description: "Участвуй в розыгрыше iPhone 15", expires_at: "2025-12-31", channel: "promo_channel_6", category: "contests" },
+            { id: 22, store: "Розыгрыш MacBook", code: "MACBOOK", description: "Шанс выиграть MacBook Air", expires_at: "2025-11-30", channel: "promo_channel_6", category: "contests" },
+            { id: 23, store: "Розыгрыш PS5", code: "PLAY2024", description: "Розыгрыш PlayStation 5", expires_at: "2025-10-31", channel: "promo_channel_6", category: "contests" }
+
         ];
 
         // Названия категорий
@@ -654,6 +703,9 @@
             'wb': 'Wildberries',
             'aliexpress': 'Aliexpress',
             'food': 'Еда',
+            'auto': 'Авто',
+            'travel': 'Отдых',
+            'contests': 'Розыгрыши',
             'other': 'Всякое'
         };
 
