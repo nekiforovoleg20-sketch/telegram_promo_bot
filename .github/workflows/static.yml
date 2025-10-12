@@ -1,14 +1,18 @@
-name: Deploy webapp to GitHub Pages
+name: Deploy static site to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # запускать при каждом push в main
+      - main  # или 'master', если у тебя так называется основная ветка
 
 permissions:
   contents: read
   pages: write
   id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -16,17 +20,18 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
 
       - name: Upload webapp folder
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './webapp'  # именно эту папку публикуем
+          path: ./webapp  # 👈 твоя папка с index.html
 
       - name: Deploy to GitHub Pages
         id: deployment
