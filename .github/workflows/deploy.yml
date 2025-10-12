@@ -3,20 +3,20 @@ name: Deploy site to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main  # деплой при пуше в main
 
 permissions:
-  contents: write
+  contents: write  # даём права на пуш
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Deploy static site
+      - name: Deploy from webapp folder
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./webapp
+          publish_dir: ./webapp  # <- вот отсюда брать сайт (index.html и assets)
