@@ -157,7 +157,7 @@
         }
         
         .shop-btn {
-            background: rgba(53, 91, 89, 0.634);
+            background: linear-gradient(135deg, var(--pastel-green), var(--pastel-blue));
             border: none;
             border-radius: 30px;
             padding: 15px;
@@ -167,13 +167,14 @@
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
-
+            
             aspect-ratio: 1;
             min-height: 0;
             position: relative;
-            overflow: hidden;
-            max-width: 120px; 
-            z-index: 1; /* изменено! чтобы свечение было под кнопкой */
+            overflow: visible;
+            max-width: 120px;
+            z-index: 1;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.25); /* можно оставить лёгкую тень */
         }
         
         .shop-btn:hover {
@@ -185,15 +186,7 @@
             transform: translateY(-1px);
         }
         
-        .shop-btn::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 30px;
-            background: linear-gradient(135deg, var(--pastel-green), var(--pastel-blue));
-            opacity: 0.9;
-            z-index: 1;
-        } 
+        
         
         .shop-btn::after {
             content: '';
