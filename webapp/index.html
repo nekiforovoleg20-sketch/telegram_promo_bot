@@ -194,11 +194,27 @@
             background: linear-gradient(135deg, var(--pastel-green), var(--pastel-blue));
             opacity: 0.8;
             z-index: 1;
+        }   
+                /* Цвета для кнопок магазинов */
+        .shop-btn[onclick="openCategory('yamarket')"]::before {
+            background: linear-gradient(135deg, #b7bd63, #b0e76c);
+        }
+
+        .shop-btn[onclick="openCategory('ozon')"]::before {
+            background: linear-gradient(135deg, #5043e2, #3f6e97);
+        }
+
+        .shop-btn[onclick="openCategory('wb')"]::before {
+            background: linear-gradient(135deg, #6d2462, #8d4b7a);
+        }
+
+        .shop-btn[onclick="openCategory('aliexpress')"]::before {
+            background: linear-gradient(135deg, #86122b, #ac6666);
         }
         
         .shop-icon {
-            width: 120%;
-            height: 120%;
+            width: 130%;
+            height: 130%;
             object-fit: contain;
             position: relative;
             z-index: 2;
